@@ -59,13 +59,11 @@ Response
 ```
 * User sign in with JWT tokens
 ```
-curl --location --request GET 'http://127.0.0.1:8000/app1/signin/' \
-> --header 'Authorization: Bearer **<ACCESS TOKEN>**
+curl --location --request GET 'http://127.0.0.1:8000/app1/signin/' --header 'Authorization: Bearer **<ACCESS TOKEN>**
 ```
 Example
 ```
-curl --location --request GET 'http://127.0.0.1:8000/app1/signin/' \
-> --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE4NTcwMTY2LCJqdGkiOiJhNWVkNjJhODVmODg0Y2RmYTBmMzY2ZThmM2FlNzM2OSIsInVzZXJuYW1lIjoiam9obkBnbWFpbC5jb20ifQ.4bfmSePGmKZ3P_42R9XJ5Kb1v-AK811hFIGOtV91-jI'
+curl --location --request GET 'http://127.0.0.1:8000/app1/signin/' --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE4NTcwMTY2LCJqdGkiOiJhNWVkNjJhODVmODg0Y2RmYTBmMzY2ZThmM2FlNzM2OSIsInVzZXJuYW1lIjoiam9obkBnbWFpbC5jb20ifQ.4bfmSePGmKZ3P_42R9XJ5Kb1v-AK811hFIGOtV91-jI'
 ```
 * Request to change user first and last name with authentication and verification
 ```
