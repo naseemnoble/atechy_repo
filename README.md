@@ -53,10 +53,14 @@ curl --location --request POST 'http://127.0.0.1:8000/app1/register/' --form 'is
 ```
 curl --location --request POST 'http://127.0.0.1:8000/app1/token_request/' --form 'username=john@gmail.com' --form 'password=smith@123'
 ```
+Response
+```
+{"refresh":**<REFRESH TOKEN>**, "access":**<ACCESS TOKEN>**}
+```
 * User sign in with JWT tokens
 ```
 curl --location --request GET 'http://127.0.0.1:8000/app1/signin/' \
-> --header 'Authorization: Bearer <ACCESS TOKEN>
+> --header 'Authorization: Bearer **<ACCESS TOKEN>**
 ```
 Example
 ```
@@ -65,15 +69,15 @@ curl --location --request GET 'http://127.0.0.1:8000/app1/signin/' \
 ```
 * Request to change user first and last name with authentication and verification
 ```
-curl --location --request PUT 'http://127.0.0.1:8000/app1/updateprofile/1/' --header 'Authorization: Bearer <ACCESS TOKEN> --form 'first_name="John john"' --form 'last_name="Smith smith"
+curl --location --request PUT 'http://127.0.0.1:8000/app1/updateprofile/1/' --header 'Authorization: Bearer **<ACCESS TOKEN>** --form 'first_name="John john"' --form 'last_name="Smith smith"
 ```
 * Store authenticated user customer support ticket by storing (User ID, Message)
 ```
-curl --location --request POST 'http://127.0.0.1:8000/app1/ticket/' --header 'Authorization: Bearer <ACCESS TOKEN> --form 'message=tiket message'
+curl --location --request POST 'http://127.0.0.1:8000/app1/ticket/' --header 'Authorization: Bearer **<ACCESS TOKEN>** --form 'message=tiket message'
 ```
 * Admin user request to list customer support tickets
 ```
-curl --location --request GET 'http://127.0.0.1:8000/app1/listticket/' --header 'Authorization: Bearer <ACCESS TOKEN>
+curl --location --request GET 'http://127.0.0.1:8000/app1/listticket/' --header 'Authorization: Bearer **<ACCESS TOKEN>**
 ```
 Response if we use Admin ACCESS TOKEN
 ```
