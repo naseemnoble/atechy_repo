@@ -13,15 +13,24 @@ from .models import Ticket
 
 
 class RegisterView(generics.CreateAPIView):
+    '''
+    Register user for admin and normal
+    '''
     queryset = User.objects.all()
     permission_classes = (AllowAny,)
     serializer_class = RegisterSerializer
 
 class MyObtainTokenPairView(TokenObtainPairView):
+    '''
+    Generating JWT ACCESS TOKEN
+    '''
     permission_classes = (AllowAny,)
     serializer_class = MyTokenObtainPairSerializer
 
 class SigninView(APIView):
+    '''
+    Sign users with JWT ACCESS TOKEN
+    '''
     permission_classes = (IsAuthenticated,)
     def get(self, request):
         user_details = User.objects.filter(username=request.user).values()[0]
@@ -32,11 +41,17 @@ class SigninView(APIView):
         return Response(content)
 
 class UpdateProfileView(generics.UpdateAPIView):
+    '''
+    Updating firstname and last name of users
+    '''
     queryset = User.objects.all()
     permission_classes = (AllowAny,)
     serializer_class = UpdateUserSerializer
 
 class TicketAPIView(APIView):
+    '''
+    Store customer support ticket
+    '''
     def post(self, request):
         #print(request.data['message'])
         serializer = TicketSerializer(data=request.data)
@@ -45,6 +60,9 @@ class TicketAPIView(APIView):
         return Response(status=status.HTTP_201_CREATED)
 
 class ListTicketView(APIView):
+    '''
+    List customer support tiket details if it admin user
+    '''
     permission_classes = (IsAuthenticated,)
     def get(self, request):
         try:

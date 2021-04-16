@@ -63,17 +63,6 @@ class UpdateUserSerializer(serializers.ModelSerializer):
             'last_name': {'required': True},
         }
 
-    '''
-    def validate_email(self, value):
-        user = self.context['request'].user
-        #print(type(user))
-        #print(user.pk)
-        #print(value)
-        #print(type(value))
-        #if User.objects.exclude(pk=user.pk).filter(email=value).exists():
-        #    raise serializers.ValidationError({"email": "This email is already in use."})
-        return value'''
-
     def update(self, instance, validated_data):
         instance =  self.context['request'].user
         print(instance)
