@@ -43,3 +43,9 @@ or
 python manage.py runserver 8080 (Change port to 8080)
 ```
 ## APIs
+Users Sign Up with (First Name, Last Name, Email Address, Password, Role)
+If Role is admin use is_superuser=True
+Role is user use is_superuser=False
+```
+curl --location --request POST 'http://127.0.0.1:8000/app1/register/' --form 'is_superuser=True' --form 'first_name="John"' --form 'last_name="smith"' --form 'email=john@gmail.com' --form 'password="smith@123"' --form 'password2="smith@123"'
+```
