@@ -4,7 +4,7 @@ Atechy_repo is REST API with Python django rest api framework.
 
 ## Steps for running
 
-Install virtualenv
+Install virtualenv, It is a tool to create isolated Python environments
 ```bash
 pip install virtualenv
 ```
