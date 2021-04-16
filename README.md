@@ -1,4 +1,4 @@
-# Atechy_repo
+# [Backend] Naseem Puzhakkal
 
 Atechy_repo is REST API with Python django rest api framework.
 
